@@ -1,0 +1,39 @@
+Compute Server job ID: 356ee55a-95b8-4212-a4a9-d97a66e593b8
+Set parameter ServerPassword
+Set parameter CSManager to value "52.231.202.235:61080"
+Set parameter TimeLimit to value 300
+Set parameter MIPGap to value 0
+Gurobi Compute Server Worker version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 2100 rows, 3100 columns and 102300 nonzeros
+Model fingerprint: 0x148690c7
+Variable types: 0 continuous, 3100 integer (3100 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 58.0000000
+Presolve removed 1340 rows and 2188 columns
+Presolve time: 0.31s
+Presolved: 760 rows, 912 columns, 16276 nonzeros
+Found heuristic solution: objective 58.0000000
+Variable types: 0 continuous, 912 integer (912 binary)
+
+Root relaxation: objective 6.300000e+01, 4479 iterations, 0.49 seconds (0.39 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      63.0000000   63.00000  0.00%     -    0s
+
+Explored 1 nodes (5326 simplex iterations) in 0.89 seconds (0.80 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 63 58 58 
+
+Optimal solution found (tolerance 0.00e+00)
+Best objective 6.300000000000e+01, best bound 6.300000000000e+01, gap 0.0000%

@@ -1,0 +1,116 @@
+Set parameter ServerPassword
+Set parameter CSManager to value "52.231.202.235:61080"
+Compute Server job ID: 7bc4c505-afe3-4615-9a1c-7b9cfd0f37ad
+Capacity available on 'gurobi.routecap.com' - connecting...
+Established HTTP unencrypted connection
+Set parameter TimeLimit to value 300
+Set parameter MIPGap to value 0
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (win64)
+Gurobi Compute Server Worker version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 2100 rows, 3100 columns and 102300 nonzeros
+Model fingerprint: 0x148690c7
+Variable types: 0 continuous, 3100 integer (3100 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 58.0000000
+Presolve removed 1340 rows and 2188 columns
+Presolve time: 0.30s
+Presolved: 760 rows, 912 columns, 16276 nonzeros
+Found heuristic solution: objective 58.0000000
+Variable types: 0 continuous, 912 integer (912 binary)
+
+Root relaxation: objective 6.300000e+01, 4479 iterations, 0.51 seconds (0.39 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      63.0000000   63.00000  0.00%     -    0s
+
+Explored 1 nodes (5326 simplex iterations) in 0.90 seconds (0.80 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 63 58 58
+
+Optimal solution found (tolerance 0.00e+00)
+Best objective 6.300000000000e+01, best bound 6.300000000000e+01, gap 0.0000%
+Optimal Solution
+Objective - 63.0 small boxes
+40.0 boxes kept in l-h orientation
+23.0 boxes kept in h-l orientation
+if_box_kept_lengthwise[1,13] - 1.0
+if_box_kept_lengthwise[1,24] - 1.0
+if_box_kept_lengthwise[1,36] - 1.0
+if_box_kept_lengthwise[1,50] - 1.0
+if_box_kept_lengthwise[4,13] - 1.0
+if_box_kept_lengthwise[4,24] - 1.0
+if_box_kept_lengthwise[4,35] - 1.0
+if_box_kept_lengthwise[4,50] - 1.0
+if_box_kept_lengthwise[7,13] - 1.0
+if_box_kept_lengthwise[7,24] - 1.0
+if_box_kept_lengthwise[7,50] - 1.0
+if_box_kept_lengthwise[10,13] - 1.0
+if_box_kept_lengthwise[10,24] - 1.0
+if_box_kept_lengthwise[10,50] - 1.0
+if_box_kept_lengthwise[12,1] - 1.0
+if_box_kept_lengthwise[13,12] - 1.0
+if_box_kept_lengthwise[13,50] - 1.0
+if_box_kept_lengthwise[15,1] - 1.0
+if_box_kept_lengthwise[16,12] - 1.0
+if_box_kept_lengthwise[16,50] - 1.0
+if_box_kept_lengthwise[18,1] - 1.0
+if_box_kept_lengthwise[18,36] - 1.0
+if_box_kept_lengthwise[19,12] - 1.0
+if_box_kept_lengthwise[19,50] - 1.0
+if_box_kept_lengthwise[21,1] - 1.0
+if_box_kept_lengthwise[21,35] - 1.0
+if_box_kept_lengthwise[22,12] - 1.0
+if_box_kept_lengthwise[22,50] - 1.0
+if_box_kept_lengthwise[24,1] - 1.0
+if_box_kept_lengthwise[24,24] - 1.0
+if_box_kept_lengthwise[24,35] - 1.0
+if_box_kept_lengthwise[27,1] - 1.0
+if_box_kept_lengthwise[27,24] - 1.0
+if_box_kept_lengthwise[27,35] - 1.0
+if_box_kept_lengthwise[30,1] - 1.0
+if_box_kept_lengthwise[30,24] - 1.0
+if_box_kept_lengthwise[30,35] - 1.0
+if_box_kept_lengthwise[33,1] - 1.0
+if_box_kept_lengthwise[33,24] - 1.0
+if_box_kept_lengthwise[33,35] - 1.0
+if_box_kept_heightwise[1,1] - 1.0
+if_box_kept_heightwise[1,4] - 1.0
+if_box_kept_heightwise[1,7] - 1.0
+if_box_kept_heightwise[1,10] - 1.0
+if_box_kept_heightwise[1,47] - 1.0
+if_box_kept_heightwise[7,35] - 1.0
+if_box_kept_heightwise[7,38] - 1.0
+if_box_kept_heightwise[7,41] - 1.0
+if_box_kept_heightwise[7,44] - 1.0
+if_box_kept_heightwise[13,23] - 1.0
+if_box_kept_heightwise[13,26] - 1.0
+if_box_kept_heightwise[13,29] - 1.0
+if_box_kept_heightwise[13,32] - 1.0
+if_box_kept_heightwise[13,47] - 1.0
+if_box_kept_heightwise[25,12] - 1.0
+if_box_kept_heightwise[25,15] - 1.0
+if_box_kept_heightwise[25,18] - 1.0
+if_box_kept_heightwise[25,21] - 1.0
+if_box_kept_heightwise[25,46] - 1.0
+if_box_kept_heightwise[25,49] - 1.0
+if_box_kept_heightwise[25,52] - 1.0
+if_box_kept_heightwise[25,55] - 1.0
+if_box_kept_heightwise[25,58] - 1.0
+
+Compute Server communication statistics:
+  Sent: 0.135 MB in 11 msgs and 1.59s (0.09 MB/s)
+  Received: 0.018 MB in 11 msgs and 1.78s (0.01 MB/s)
+
+
+Process finished with exit code 0

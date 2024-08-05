@@ -1,0 +1,8 @@
+BRIDGE CROSSING PROBLEM
+
+optimiser_flow.py - run this code
+outputs/lp_file.lp - lp file
+outputs/log.txt - log file
+outputs/job-955528c9-f819-4011-aa6d-335092b204c8 - gurobi log
+
+other files - old files (not required)

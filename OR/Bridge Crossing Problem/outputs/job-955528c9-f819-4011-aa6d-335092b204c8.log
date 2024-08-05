@@ -1,0 +1,186 @@
+Compute Server job ID: 955528c9-f819-4011-aa6d-335092b204c8
+Set parameter ServerPassword
+Set parameter CSManager to value "52.231.202.235:61080"
+Set parameter TimeLimit to value 30
+Set parameter MIPGap to value 0
+Gurobi Compute Server Worker version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 46 rows, 38 columns and 126 nonzeros
+Model fingerprint: 0x74b8be41
+Variable types: 0 continuous, 38 integer (36 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 6e+00]
+Presolve removed 0 rows and 36 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Set parameter TimeLimit to value 30
+Set parameter MIPGap to value 0
+Gurobi Compute Server Worker version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 86 rows, 64 columns and 240 nonzeros
+Model fingerprint: 0xc10b0dd0
+Variable types: 0 continuous, 64 integer (60 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 6e+00]
+Presolve removed 44 rows and 49 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Set parameter TimeLimit to value 30
+Set parameter MIPGap to value 0
+Gurobi Compute Server Worker version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 126 rows, 90 columns and 354 nonzeros
+Model fingerprint: 0x3efcfc12
+Variable types: 0 continuous, 90 integer (84 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 6e+00]
+Presolve removed 70 rows and 55 columns
+Presolve time: 0.00s
+Presolved: 56 rows, 35 columns, 173 nonzeros
+Variable types: 0 continuous, 35 integer (30 binary)
+
+Root relaxation: infeasible, 31 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0               - infeasible      -     -    0s
+
+Explored 1 nodes (31 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Set parameter TimeLimit to value 30
+Set parameter MIPGap to value 0
+Gurobi Compute Server Worker version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 166 rows, 116 columns and 468 nonzeros
+Model fingerprint: 0xe3386580
+Variable types: 0 continuous, 116 integer (108 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 6e+00]
+Presolve removed 82 rows and 61 columns
+Presolve time: 0.00s
+Presolved: 84 rows, 55 columns, 257 nonzeros
+Variable types: 0 continuous, 55 integer (48 binary)
+
+Root relaxation: infeasible, 64 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0               - infeasible      -     -    0s
+
+Explored 1 nodes (64 simplex iterations) in 0.03 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Set parameter TimeLimit to value 30
+Set parameter MIPGap to value 0
+Gurobi Compute Server Worker version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 206 rows, 142 columns and 582 nonzeros
+Model fingerprint: 0xc0e43a9b
+Variable types: 0 continuous, 142 integer (132 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 6e+00]
+Found heuristic solution: objective 53.0000000
+Presolve removed 94 rows and 67 columns
+Presolve time: 0.00s
+Presolved: 112 rows, 75 columns, 341 nonzeros
+Variable types: 0 continuous, 75 integer (66 binary)
+
+Root relaxation: objective 1.408219e+01, 111 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   14.08219    0   65   53.00000   14.08219  73.4%     -    0s
+H    0     0                      41.0000000   14.08219  65.7%     -    0s
+H    0     0                      34.0000000   14.08219  58.6%     -    0s
+     0     0   19.66548    0   50   34.00000   19.66548  42.2%     -    0s
+     0     0   20.85940    0   48   34.00000   20.85940  38.6%     -    0s
+     0     0   20.97869    0   47   34.00000   20.97869  38.3%     -    0s
+     0     0   20.97869    0   48   34.00000   20.97869  38.3%     -    0s
+     0     0   22.72346    0   35   34.00000   22.72346  33.2%     -    0s
+     0     0   23.33158    0   36   34.00000   23.33158  31.4%     -    0s
+     0     0   23.33158    0   37   34.00000   23.33158  31.4%     -    0s
+H    0     0                      32.0000000   24.02895  24.9%     -    0s
+     0     0   24.09607    0   37   32.00000   24.09607  24.7%     -    0s
+     0     0   24.43439    0   44   32.00000   24.43439  23.6%     -    0s
+     0     0   24.43439    0   33   32.00000   24.43439  23.6%     -    0s
+     0     0   24.52490    0   48   32.00000   24.52490  23.4%     -    0s
+     0     0   24.57205    0   46   32.00000   24.57205  23.2%     -    0s
+     0     0   24.57205    0   42   32.00000   24.57205  23.2%     -    0s
+     0     0   24.57205    0   43   32.00000   24.57205  23.2%     -    0s
+     0     0   24.57205    0   44   32.00000   24.57205  23.2%     -    0s
+     0     0   24.57205    0   44   32.00000   24.57205  23.2%     -    0s
+     0     0   24.61991    0   44   32.00000   24.61991  23.1%     -    0s
+     0     0   25.14128    0   44   32.00000   25.14128  21.4%     -    0s
+     0     0   25.14128    0   37   32.00000   25.14128  21.4%     -    0s
+     0     2   25.14128    0   37   32.00000   25.14128  21.4%     -    0s
+
+Cutting planes:
+  Gomory: 6
+  Implied bound: 2
+  MIR: 20
+  RLT: 6
+  Relax-and-lift: 2
+
+Explored 55 nodes (943 simplex iterations) in 0.40 seconds (0.03 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 32 34 41 53 
+
+Optimal solution found (tolerance 0.00e+00)
+Best objective 3.200000000000e+01, best bound 3.200000000000e+01, gap 0.0000%
