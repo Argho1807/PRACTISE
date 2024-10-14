@@ -116,4 +116,3 @@ for num_rounds in range(1, 4):
             count += 1
     if count == num_people and pywraplp.Solver.OPTIMAL is True:
         break
-
