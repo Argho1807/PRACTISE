@@ -1,0 +1,81 @@
+1. CHECK IF A CONSTRAINT EXISTS (USING NAME), MODIFY IF IT EXISTS (DELETE IT AND ADD IT)
+
+constraint_to_remove = self.model.getConstrByName("constraint_name")
+if constraint_to_remove is not None:
+    self.model.remove(constraint_to_remove)
+self.model.addConstr(expr <= RHS, name="constraint_name")
+self.model.update()
+
+*************************************************************************************************************************************************************************
+2. IF THE EXISTING CONSTRAINT IS NON-LINEAR (EXTENSION OF 1.)
+
+quadratic_constraints = self.model.getQConstrs()
+for qconstr in quadratic_constraints:
+    if qconstr.getAttr("QCName") == "constraint_name":
+        self.model.remove(qconstr)
+        break
+self.model.addConstr(expr <= RHS, name="constraint_name")
+self.model.update()
+
+*************************************************************************************************************************************************************************
+3. WRITING A MULTI-OBJECTIVE FUNCTION
+
+self.model.setObjectiveN(expr=obj_1, index=0, priority=5, weight=-1, name='obj_1_name')
+env_1 = self.model.getMultiobjEnv(0)
+env_1.setParam('TimeLimit', time_limit_1)
+self.model.setObjectiveN(expr=obj_2, index=1, priority=2, weight=1, name='obj_2_name')
+env_2 = self.model.getMultiobjEnv(1)
+env_2.setParam('TimeLimit', time_limit_2)
+
+more the priority, more is the objective priority
+weight = 1 is minimisation and weight=-1 is maximisation
+
+*************************************************************************************************************************************************************************
+4. STORING BEST MULTIPLE SOLUTIONS (SOLUTION POOL)
+
+self.model.Params.PoolSearchMode = 2
+self.model.Params.PoolSolutions = N (number of solutions to store)
+
+for sol_cnt in range(min(1, self.model.SolCount)):
+    self.model.setParam(GRB.Param.SolutionNumber, sol_cnt)
+    print(f"Solution {sol_cnt} - Objective value = {self.model.PoolObjVal}")
+    for v in self.model.getVars():
+        if v.Xn > 0:
+            print("{} = {}".format(v.VarName, v.Xn))
+
+*************************************************************************************************************************************************************************
+5. GUROBI USEFUL PARAMETERS
+
+self.model.Params.TimeLimit = 1800
+self.model.Params.NoRelHeurTime = 350
+self.model.Params.Heursitics = 0.25
+self.model.Params.MIPGap = 0.01
+
+self.model.Params.NonConvex = 2
+self.model.Params.IntFeasTol = 1e-9 (default at 1e-6)
+
+self.model.Params.PoolSearchMode = 2
+#self.model.Params.PoolSolutions = 10
+
+*************************************************************************************************************************************************************************
+6. INFEASIBILITY ANALYSIS
+
+self.model.computeIIS()
+iis_constraints = [constr for constr in self.model.getConstrs() if constr.IISConstr]
+print("IIS Constraints:")
+for constr in iis_constraints:
+    print(f"Constraint Name: {constr.ConstrName}")
+    print(f"Expression: {constr}")
+    print(f"Lower Bound: {constr.LB}")
+    print(f"Upper Bound: {constr.UB}")
+ILP_file = 'ILP/ILP_file_' + str(datetime.date.today()) + datetime.datetime.now().strftime("_%H_%M_%S_") + '.ilp'
+self.model.write(ILP_file)
+
+*************************************************************************************************************************************************************************
+7. INFORMATION ABOUT ALL MODEL CONSTRAINTS
+
+for constr in self.model.getConstrs():
+    constr_name = constr.ConstrName
+    constr_expr = model.getRow(constr)  # The linear expression
+    constr_rhs = constr.RHS
+    constr_sense = constr.Sense

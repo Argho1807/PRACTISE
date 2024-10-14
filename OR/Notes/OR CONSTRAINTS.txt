@@ -1,0 +1,320 @@
+1. MAXIMUM FUNCTIONS
+
+1.1 MAXIMUM FUNCTION FOR TWO BINARY VARIABLES / OR GATE FOR TWO BINARY VARIABLES 
+
+Q. X1, X2 are binary variables. Express Y = max{X1, X2} as set of linear constraints.
+
+OR
+
+Express Y in terms of X1, X2 in linear constraints
+X1      X2      Y
+1       0       1
+0       1       1
+0       0       0
+1       1       1
+
+Soln.
+Y >= X1
+Y >= X2
+Y <= X1 + X2
+
+*************************************************************************************************************************************************************************
+1.2 MAXIMUM FUNCTION FOR n BINARY VARIABLES
+
+Q. X1, X2, ..., Xn are binary variables. Express Y = max{X1, X2, ..., Xn} as set of linear constraints.
+
+Soln.
+Y >= X1
+Y >= X2
+...
+Y >= Xn
+
+Y <= X1 + X2 + X3 + ... + Xn
+
+*************************************************************************************************************************************************************************
+1.3 MAXIMUM FUNCTION FOR TWO CONTINUOUS VARIABLES
+
+Q. X1, X2 are continuous variables. Express Y = max{X1, X2} as set of linear constraints.
+
+Soln. 
+z - variable (type = binary)
+
+Y >= X1
+Y >= X2
+Y <= X1 + M*(1 - z)
+Y <= X2 + M*z
+
+*************************************************************************************************************************************************************************
+1.4 MAXIMUM FUNCTION FOR n CONTINUOUS VARIABLES
+
+Q. X1, X2, ..., Xn are continuous variables. Express Y = max{X1, X2, ..., Xn} as set of linear constraints.
+
+Soln. 
+z1, z2, ..., zn - variables (type = binary) 
+
+Y >= X1
+Y >= X2
+...
+Y >= Xn
+
+Y <= X1 + M*(1 - z1)
+Y <= X2 + M*(1 - z2)
+...
+Y <= Xn + M*(1 - zn)
+
+z1 + z2 + z3 + ... + zn = 1
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+2. MINIMUM FUNCTIONS
+
+2.1 MINIMUM FUNCTION FOR TWO BINARY VARIABLES / AND GATE FOR TWO BINARY VARIABLES
+
+Q. X1, X2 are binary variables. Express Y = min{X1, X2} as set of linear constraints.
+
+OR
+
+Express Y in terms of X1, X2 in linear constraints
+X1      X2      Y
+1       0       0
+0       1       0
+0       0       0
+1       1       1
+
+Soln.
+Y <= X1
+Y <= X2
+Y >= X1 + X2 - 1
+
+Constraints (Non Linear) -
+Y = X1 * X2
+
+*************************************************************************************************************************************************************************
+2.2 MINIMUM FUNCTION FOR n BINARY VARIABLES
+
+Q. X1, X2, ..., Xn are binary variables. Express Y = min{X1, X2, ..., Xn} as set of linear constraints.
+
+Soln.
+Y <= X1
+Y <= X2
+...
+Y <= Xn
+
+Y >= X1 + X2 + X3 - (n - 1)
+
+Constraints (Non Linear) -
+Y = X1 * X2 * X3 * ... * Xn
+
+*************************************************************************************************************************************************************************
+2.3 MINIMUM FUNCTION FOR TWO CONTINUOUS VARIABLES
+
+Q. X1, X2 are continuous variables. Express Y = min{X1, X2} as set of linear constraints.
+
+Soln. 
+z - variable (type = binary)
+
+Y <= X1
+Y <= X2
+Y >= X1 - M*(1 - z)
+Y >= X2 - M*z
+
+*************************************************************************************************************************************************************************
+2.4 MINIMUM FUNCTION FOR n CONTINUOUS VARIABLES
+
+Q. X1, X2, ..., Xn are continuous variables. Express Y = min{X1, X2, ..., Xn} as set of linear constraints.
+
+Soln. 
+z1, z2, ..., zn - variables (type = binary)
+
+Y <= X1
+Y <= X2
+...
+Y <= Xn
+
+Y >= X1 - M*(1 - z1)
+Y >= X2 - M*(1 - z2)
+...
+Y >= Xn - M*(1 - zn)
+
+z1 + z2 + z3 + ... + zn = 1
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+3. NOT GATE FOR A BINARY VARIABLE
+
+Q. Express Y in terms of X as set of linear constraints
+X       Y
+1       0
+0       1
+
+Soln.
+Y = 1 - X
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+4. XOR (EXCLUSIVE OR) GATE FOR TWO BINARY VARIABLES
+
+Q. Express Y in terms of X1, X2 as set of linear constraints
+X1      X2      Y
+1       0       1
+0       1       1
+0       0       0
+1       1       0
+
+Soln.
+Y >= X1 - X2
+Y >= X2 - X1
+Y <= X1 + X2
+Y <= 2 - X1 - X2
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+5. CEILING / FLOOR FUNCTION 
+
+5.1 CEILING FUNCTION FOR A CONTINUOUS VARIABLE
+
+Q. X is a continuous variable. Write linear constraints to find its ceiling value.
+
+Soln.
+X_ceil - variable (type = integer)
+Temp_ceil - variable (type = continuous, lb=0, ub=0.999999)
+
+X_ceil = X + Temp_ceil
+
+*************************************************************************************************************************************************************************
+5.2 FLOOR FUNCTION FOR A CONTINUOUS VARIABLE
+
+Q. X is a continuous variable. Write linear constraints to find its floor value.
+
+Soln.
+X_floor - variable (type = integer)
+Temp_floor - variable (type = continuous, lb=0, ub=0.999999)
+
+X = X_floor + Temp_floor
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+6. INEQUALITY CONSTRAINTS 
+
+6.1 INEQUALITY CONSTRAINTS FOR TWO INTEGER VARIABLES
+
+Q. X1, X2 are integer variables. Express X1 != X2 as set of linear constraints.
+
+Anyone of these 2 have to be true ->
+X1 >= X2 + 1
+X1 <= X2 - 1
+
+Soln. 
+z - variable (type = binary)
+
+X1 >= X2 + 1 - M*(1 - z)
+X1 <= X2 - 1 + M*z
+
+*************************************************************************************************************************************************************************
+6.2 INEQUALITY CONSTRAINTS FOR TWO CONTINUOUS VARIABLES
+
+Q. X1, X2 are continuous variables. Express X1 != X2 as set of linear constraints.
+
+Soln. 
+z - variable (type = binary)
+
+X1 >= X2 + 0.000001 - M*(1 - z)
+X1 <= X2 - 0.000001 + M*z
+
+*************************************************************************************************************************************************************************
+6.3 INEQUALITY CONSTRAINTS FOR n INTEGER VARIABLES
+
+Q. X[1], X[2], ..., X[n] are integer variables. Express X[i] != X[j] (for all i,j) as set of linear constraints.
+
+Soln. 
+z[i,j] - variables (type = binary, index = for all (i,j) if i<j)
+
+X[i] >= X[j] + 1 - M*(1 - z[i,j])   (for all i,j if i<j)
+X[i] <= X[j] - 1 + M*z[i,j]         (for all i,j if i<j)
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+7. PIECEWISE FUNCTIONS
+
+7.1 
+Q. X is a continuous variable, z is a binary variable.
+   If X >= 0, z = 1
+   Else z = 0
+   Express as set of linear constraints.
+
+Soln. 
+X >= -M*(1 - z)
+X < M*z  
+
+7.2 
+Q. X is a continuous variable (lb = 0), z is a binary variable. 
+   If X >= 200, z = 1
+   Else z = 0
+   Express as set of linear constraints.
+
+Soln. 
+X >= 200 - M*(1 - z)
+X < 200 + M*z
+
+7.3 
+Q. X is a continuous variable (lb = 0), Y is a continuous variable. 
+   If X >= 200, Y = X 
+   Else Y = 0
+   Express as set of linear constraints.
+
+Soln.
+z - variable (type = binary)
+
+X >= 200 - M*(1 - z)
+X < 200 + M*z
+Y <= M*z 
+Y <= X
+Y >= X - M*(1 - z)
+
+7.4 ???  # check
+Q. X is a continuous variable (lb = 0), z is a binary variable. 
+   If 100 <= X <= 200, z = 1
+   Else z = 0
+   Express as set of linear constraints.
+
+Soln.
+X < 100 + M*z
+X >= 100 - M*(1 - z)
+X <= 200 + M*(1 - z)
+X > 200 - M*z
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+8. ABSOLUTE VALUE OF A CONTINUOUS VARIABLE
+
+Q. Express Y = |X| as set of linear constraints.
+
+Soln.
+z - variable (type = binary)
+
+Y >= X
+Y >= -X 
+Y <= X + M*(1 - z)
+Y <= -X + M*z
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+9. VEHICLE START AND END TIMES
+
+Q. A vehicle can have either of -
+   start time between 6hrs to 8hrs and end time between 11hrs to 16hrs OR
+   start time between 11hrs to 16hrs and end time between 21hrs to 24hrs
+   Formulate as set of linear constraints.
+
+Soln. 
+start_time - variable (type = continuous)
+end_time - variable (type = continuous)
+z - variable (type = binary)
+
+start_time >= 6*z + 11*(1 - z)
+start_time <= 8*z + 16*(1 - z)
+end_time >= 11*z + 21*(1 - z)
+end_time <= 16*z + 24*(1 - z)
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************

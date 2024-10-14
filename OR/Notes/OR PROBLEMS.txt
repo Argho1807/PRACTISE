@@ -1,0 +1,128 @@
+1. GRAPH COLORING PROBLEM
+
+Q. Colour set of given nodes so that no two adjacent nodes have the same colour. Minimise the number of colours used.
+
+Soln. 
+
+SETS
+NODES - {Node(1), Node(2), Node(3), ..., Node(N)}
+EDGES - {Edge(1), Edge(2), Edge(3), ..., Edge(E)} where Edge(e) = (Node(n1), Node(n2))
+
+DECISION VARIABLES
+1. color(index = ((n) ∀ n ∈ NODES), type = INTEGER, lb = 1) - colour of node "n" denoted by an integer
+2. maxColor(type = INTEGER) - maximum colour value of all nodes
+3. isDistinct(index = ((n1, n2) ∀ n1 ∈ NODES ∀ n2 ∈ NODES), type = BINARY) - 1 if color(n1) > color(n2) else 0. Used in the inequality colour constrint for decision
+
+CONSTRAINTS
+
+1. Adjacent nodes must have different colours
+color[n1] != color[n2]  ∀ (n1, n2) ∈ EDGES
+
+This is written in linear form as -
+color[n1] >= color[n2] + 1 - M*(1 - isDistinct[n1,n2])   ∀ (n1, n2) ∈ EDGES
+color[n1] <= color[n2] - 1 + M*isDistinct[n1,n2]         ∀ (n1, n2) ∈ EDGES
+
+2. Maximum value of colour for all nodes
+maxColor >= color[n]    ∀ n ∈ NODES
+
+OBJECTIVE FUNCTION
+
+number of colours used = maxColor
+Minimise number of colours used
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+2. N - QUEENS
+
+Q. Place N queens on an N*N chessboard such that no two queens are placed on the same row, column or diagonal.
+
+Soln.
+
+DIAGONAL TRAVERSAL LOGIC
+Refer - c:\ARGHO\Practise\OR\Notes\Diagonal Traversal Logic.jpg
+
+MATHEMATICAL MODEL
+
+SETS
+GRID - {0, 1, 2, ..., N-1}
+
+DECISION VARIABLES
+If_queen_selected(index = ((row,col) ∀ row ∈ GRID ∀ col ∈ GRID), type = BINARY) - 1 if a queen is placed in "row,col" position on the chessboard else 0
+
+CONSTRAINTS
+
+1. Exactly one queen per row
+sum(col ∈ GRID, If_queen_selected[row,col]) = 1             ∀ row ∈ GRID
+
+2. Exactly one queen per column
+sum(row ∈ GRID, If_queen_selected[row,col]) = 1             ∀ col ∈ GRID
+
+3. At most one queen per diagonal traversed
+sum(J ∈ [0,K], If_queen_selected[J,K-J]) <= 1               ∀ K ∈ [0,N-1]
+sum(J ∈ [0,N-1-K], If_queen_selected[J+K,N-1-J]) <= 1       ∀ K ∈ [1,N-1]
+sum(J ∈ [0,K], If_queen_selected[N-1+J-K,J]) <= 1           ∀ K ∈ [0,N-1]
+sum(J ∈ [0,N-1-K], If_queen_selected[J,J+K]) <= 1           ∀ K ∈ [1,N-1]
+
+NOTE - Maximum number of unique solutions for 8*8 gridsize = 92
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+3. TRUCK TYPE PROBLEM
+
+Q. A company has 2 truck sizes of 15 tons and 10 tons. It costs 150 USD to use a 15 ton truck and 120 USD to use a 10 ton truck. 
+They need to deliver certain weight to 100 locations in Bangalore (weekly basis). Let total weekly weight delivered to location i is W(i). 
+Each location can receive equal delivery once [M or T or W or R or F], twice [MR or TF], thrice [MWF] or 5 times a week [MTWRF] and total weekly weight is W[i].
+Write a mathematical model to minimise total delivery costs.
+
+Soln. 
+
+SETS
+DAYS - {MON, TUE, WED, THU, FRI}
+LOCATION - {L1, L2, L3, ..., L100}
+TRUCKTYPE - {TT1, TT2}
+DELIVERYTYPE - {1, 2, 3, 5}
+
+PARAMETERS
+Demand(l) - Weekly demand at location "l"
+Capacity(tt) - Capacity of truck having type "tt" = [10, 15]
+Cost(tt) - Cost of using truck having type "tt" = [120, 150]
+Frequncy(dt) - Number of weekly deliveries for delivery type "dt" = [1,2,3,5]
+
+DECISION VARIABLES
+1. num_trucks(index = ((tt, day) ∀ tt ∈ TRUCKTYPE ∀ day ∈ DAYS), type = integer, lb = 0) - number of trucks of type "tt" running on day "day"
+2. delivery_type_selected(index = ((l, dt) ∀ location ∈ LOCATION ∀ dt ∈ DELIVERYTYPE), type = BINARY) - 1 if deLivery type "dt" is selected for location "l" else 0
+3. delivery_type_selected(index = ((l, dt, day) ∀ location ∈ LOCATION ∀ dt ∈ DELIVERYTYPE ∀ day ∈ DAYS), type = BINARY) - 
+   1 if delivery type "dt" for day "day" is selected for location "l" else 0
+
+CONSTRAINTS
+
+1. Delivery type selection for each location
+sum(dt ∈ DELIVERYTYPE, delivery_type_selected[l,dt]) = 1                                                                ∀ l ∈ LOCATION
+
+2. Delivery day selection with type for each location
+sum(day ∈ DAYS, delivery_type_day_selected[l,dt,day]) = Frequncy(dt) * delivery_type_selected[l,dt]                     ∀ l ∈ LOCATION, ∀ dt ∈ DELIVERYTYPE
+
+3. Day selection on delivery type choice
+
+3.1 Delivery type - Two
+delivery_type_day_selected[l,2,MON] = delivery_type_day_selected[l,2,THU]                                               ∀ l ∈ LOCATION
+delivery_type_day_selected[l,2,TUE] = delivery_type_day_selected[l,2,FRI]                                               ∀ l ∈ LOCATION
+
+3.2 Delivery type - Three
+delivery_type_day_selected[l,3,MON] = delivery_type_day_selected[l,3,WED] = delivery_type_day_selected[l,3,FRI]         ∀ l ∈ LOCATION
+
+3.2 Delivery type - Five
+delivery_type_day_selected[l,5,MON] = delivery_type_day_selected[l,5,TUE] = delivery_type_day_selected[l,5,WED] 
+= delivery_type_day_selected[l,5,THU] = delivery_type_day_selected[l,5,FRI]                                             ∀ l ∈ LOCATION
+
+4. Truck Capacity
+sum(tt ∈ TRUCKTYPE, num_trucks[tt,day]) 
+>= sum((l ∈ LOCATION, dt ∈ DELIVERYTYPE), delivery_type_day_selected[l,dt,day] * Demand(l) / Frequncy(dt))              ∀ day ∈ DAYS
+
+OBJECTIVE FUNCTION
+
+total delivery cost = sum((day ∈ DAYS, tt ∈ TRUCKTYPE), cost[tt] * num_trucks[tt,day]) 
+Minimise total delivery cost
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
