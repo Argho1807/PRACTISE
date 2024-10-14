@@ -153,9 +153,9 @@ else:
 
 # REDUCED COSTS - force product 3 to 1 unit
 
-solver_primal.Add(x[2] == 1)
+solver_primal.Add(x[2] == 1)  # forcing 1 unit of product 3 to be produced (previously none were produced)
 
-z_r = [] 
+z_r = []
 for i in range(num_products):
     z_r.append(Profits[i]*x[i])
 
@@ -165,8 +165,8 @@ status = solver_primal.Solve()
 if status == pywraplp.Solver.OPTIMAL:
     print(f'\nReduced costs test - produce 1 unit of {I[2]}\n')
     Z_r = round(solver_primal.Objective().Value(),2)
-    print('Profit =',Z_r,'POUNDS\n')    
-    
+    print('Profit =',Z_r,'POUNDS\n')
+
     X = [x[i].solution_value() for i in range(num_products)]
     print(pd.DataFrame(X, index = I, columns = ['Quantity']),'\n')
 
