@@ -5,5 +5,3 @@ outputs/Box Packing_*_*_*_*.xlsx - outputs
 outputs/log.txt - log file
 outputs/job-356ee55a-95b8-4212-a4a9-d97a66e593b8 - gurobi log
 outputs/lp_file.lp - lp file
-
-other files - old files (not required)
