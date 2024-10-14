@@ -1,3 +1,12 @@
+""" LEAGUE PREDICTION """
+
+"""
+
+A 20 team league where each team faces another twice (like PL / La Liga etc).
+Take different cases which are possible as a result of the league.
+
+"""
+
 import gurobipy as gp
 from gurobipy import GRB
 import pandas as pd
