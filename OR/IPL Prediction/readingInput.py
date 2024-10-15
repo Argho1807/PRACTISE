@@ -41,6 +41,6 @@ def process_input_df(points_table_df, match_schedule_df):
         print("possible error in input")
         return None, None
 
-    utilities.write_processed_output_for_input_data(points_table_df, match_schedule_df)
+    # utilities.write_processed_output_for_input_data(points_table_df, match_schedule_df)
 
     return points_table_df, match_schedule_df

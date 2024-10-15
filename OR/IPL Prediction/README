@@ -1,0 +1,7 @@
+IPL PREDICTION
+
+main.py - run this code
+other .py files - called from main.py
+inputs/IPL_TABLE_LIVE.xlsx - input file
+outputs/output_matches_left_*_*.csv - outputs
+outputs/log.txt - log file

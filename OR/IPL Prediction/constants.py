@@ -1,5 +1,3 @@
-from libraries import *
-
 Team_name_map = {'Kolkata Knight Riders': 'KKR',
                  'Mumbai Indians': 'MI',
                  'Chennai Super Kings': 'CSK',
@@ -12,6 +10,3 @@ Team_name_map = {'Kolkata Knight Riders': 'KKR',
                  'Punjab Kings': 'PBKS'}
 
 Teams = list(Team_name_map.values())
-
-
-
