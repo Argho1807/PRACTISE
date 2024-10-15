@@ -1,0 +1,150 @@
+HOME
+1. CONDITIONAL FORMATTING
+Home -> Styles -> Conditional Formatting
+
+Shortcuts - 
+BRING CONDITIONAL FORMATTING DIALOG BOX - Alt + H -> L
+
+E.g. Colour cells of "A" column having value as "OK"
+    A   
+1   OK
+2   OK
+3   NOT 
+4   OK
+
+Bring Conditional Formatting Dialog Box 
+Select "New Rule"
+Under "Select A Rule Type", select "Use a formula to determine which cells to format"
+In "Edit the rule description" -> = A1:A4 = "OK"
+Under "Format" -> "Fill" -> choose color
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+INSERT
+
+1. PIVOT TABLE
+Insert -> Tables -> PivotTables
+
+Shortcuts - 
+BRING PIVOT TABLE DIALOG BOX - Alt + N -> V
+
+E.g.
+Bring pivot table Dialog Box 
+Under "Select a table or range" -> select data range
+Under "Location" -> choose new /existing worksheet
+In the pivot table -> add columns to "Filters" / "Columns" / "Rows" / "Values" as required
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+DATA
+
+1. SORT
+Data -> Sort & Filter -> Sort
+
+Shortcuts -
+BRING SORT DIALOG BOX - Alt + A -> SS
+
+*************************************************************************************************************************************************************************
+2. FILTER
+Data -> Sort & Filter -> Filter
+
+Shortcuts -
+APPLY / REMOVE FILTER - Ctrl + Shift + L
+BRING DROPDOWN - Alt + Down Arrow
+
+*************************************************************************************************************************************************************************
+3. TEXT TO COLUMNS
+Data -> Data Tools -> Text to Columns
+
+Shortcuts -
+BRING TEXT TO COLUMNS DIALOG BOX - Alt + A -> E
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+VIEW
+
+1. FREEZE
+Select cell -> View -> Window -> Freeze Panes
+
+Shortcuts -
+FREEZE 1ST COLUMN - Alt + W -> F -> C
+FREEZE 1ST ROW - Alt + W -> F -> R
+FREEZE CURRENT CELL - Alt + W -> F -> F
+
+*************************************************************************************************************************************************************************
+*************************************************************************************************************************************************************************
+FORMULAS
+
+1. FIX CELL (A1 -> $A$1 -> A$1 -> $A1 -> A1)
+USE F4
+
+*************************************************************************************************************************************************************************
+2. CONCAT
+APPENDS / JOINS CELL VALUES
+C1 = CONCAT(A1,"-",B1)
+
+*************************************************************************************************************************************************************************
+3. IF
+RETURNS VALUE BASED ON IF CONDITION
+A1 = IF(CONDITION, VALUE IF TRUE, VALUE IF FALSE)
+
+*************************************************************************************************************************************************************************
+4. CHOOSE
+RETURNS VALUE FROM LIST BASED ON INDEX VALUE PASSED
+B1 = CHOOSE(INDEX_NUM, VALUE IF INDEX_NUM = 1, VALUE IF INDEX_NUM = 2, ...)
+
+E.g. A1 contains either of 0,1,2,3,4,5,6
+map as - 0 -> "MON", 1 -> "TUE", ..., 6 -> "SUN"
+B1 = CHOOSE(A1+1, "MON", "TUE", ..., "SUN")
+
+*************************************************************************************************************************************************************************
+5. COUNTA
+RETURNS COUNT OF NON-EMPTY CELLS
+A1 = COUNTA(RANGE)
+
+*************************************************************************************************************************************************************************
+6. SUMIF / COUNTIF
+SUMIF - C1 = SUMIF(RANGE, CRITERIA, SUM_RANGE)
+RETURNS SUM OF "SUM_RANGE" COLUMN WHOSE CORRESPONDING "RANGE" COLUMN VALUE MATCHES "CRITERIA"
+COUNTIF - C2 = COUNTIF(RANGE, CRITERIA)
+RETURNS COUNT OF "RANGE" COLUMN MATCHING THE "CRITERIA"
+
+E.g. Find sum and count of cells having "A" column as "OK"
+    A   B 
+1   OK  1
+2   OK  20
+3   NOT 27
+
+C1 = SUMIF(A1:A3, "OK", B1:B3) = 21
+C2 = COUNTIF(A1:A3, "OK") = 2
+
+*************************************************************************************************************************************************************************
+7. SUMIFS / COUNTIFS
+SUMIFS - D1 = SUMIFS(SUM_RANGE, CRITERIA_RANGE_1, CRITERIA_1, CRITERIA_RANGE_2, CRITERIA_2, ...)
+RETURNS SUM OF "SUM_RANGE" COLUMN WHOSE "CRITERIA_RANGE_1" COLUMN VALUE MATCHES "CRITERIA_1" AND "CRITERIA_RANGE_2" COLUMN VALUE MATCHES "CRITERIA_2" ...
+COUNTIFS - D2 = COUNTIFS(CRITERIA_RANGE_1, CRITERIA_1, CRITERIA_RANGE_2, CRITERIA_2, ...)
+RETURNS COUNT OF COLUMNS WHOSE "CRITERIA_RANGE_1" COLUMN VALUE MATCHES "CRITERIA_1" AND "CRITERIA_RANGE_2" COLUMN VALUE MATCHES "CRITERIA_2" ...
+
+E.g. Find sum and count of cells having "A" column as "OK" and "B" column as "AB"
+    A   B   C
+1   OK  EF  1
+2   OK  AB  2
+3   NOT AB  5
+4   OK  AB  50
+5   NOT EF  27
+
+D1 = SUMIFS(C1:C5, A1:A5, "OK", B1:B5, "AB") = 52
+D2 = COUNTIFS(A1:A5, "OK", B1:B5, "AB") = 2
+
+*************************************************************************************************************************************************************************
+8. VLOOKUP / XLOOKUP
+VLOOKUP - FINDS VALUE OF CELL IN GIVEN TABLE AND RETURNS VALUE IN GIVEN COLUMN NUMBER
+
+A1 = VLOOKUP(CELL, COL_RANGE, COL_NO, CONDITION)
+CELL - Value of cell to compare
+COL_RANGE - Selected columns (first column is where value of "CELL" has to be present)
+COL_NO - Value to return (column number of "COL_RANGE")
+CONDITION - 1 for approx match and 0 for exact match
+
+XLOOKUP - SIMILAR TO VLOOKUP
+VLOOKUP is column-wise and XLOOKUP is row-wise
